@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Registration Form</title>
+
+    <link rel="stylesheet" href="Style_reg.css">
+</head>
+<body>
+
+    <header>
+        <h1>WordPress</h1>
+        <p>Choose the perfect plan for your needs</p>
+    </header>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">RK_wordpress</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li><a href="Home.html" >Home</a></li>
+            <li class="active"><a href="register.html">Register</a></li>
+            <li><a href="login.html">Login</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <script>
+           function ReDirectToRegisterPage()
+           {
+              window.location.href="Register.html";
+              return false;
+           }
+
+           function validateForm() 
+           {
+                  var username = document.getElementById('username').value;
+                  var password = document.getElementById('password').value;
+
+               if (username === '' || password === '') {
+               alert('All fields are required');
+               return;
+           }
+
+           alert('Login successful!');
+           document.getElementById('loginForm').reset();
+          }
+
+      </script>
+
+<header>
+    <h3>Login Here</h3>
+</header>
+
+<form class="login" id="loginForm">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <label for="Registration" class="reg" onclick="return ReDirectToRegisterPage()">Do You Want To Register..?Click Here</label>
+
+    <button type="submit" onclick="validateForm()" class="Reg_btn">Login</button>
+</form>
+
+</body>
+</html>
